@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Box, Drawer, Icon, Divider, Link } from "@mui/material";
-import FBLogo from "../../assets/images/FictionalBankLogo.png";
 import {
   getNavbarStyles,
   getDrawerMenuStyle,
@@ -63,13 +62,12 @@ const Navbar = () => {
     <>
       {isMobile ? (
         <Box sx={getMobileContainerStyle}>
-          <Box
+          {/* <Box
             sx={getMobileLogoStyle}
             component="img"
             src={FBLogo}
             alt="FictionalBank Logo"
-          />
-          <StyledOutlineButton>Abra sua conta</StyledOutlineButton>
+          /> */}
           <StyledBurguerButton
             onClick={() => setIsOpen(isOpen ? false : true)}
             isOpen={isOpen}
@@ -101,12 +99,12 @@ const Navbar = () => {
       ) : (
         <Box sx={getNavbarStyles}>
           <Box sx={{ display: "flex", alignItems: "center" }}>
-            <Box
+            {/* <Box
               sx={getImageStyle}
               component="img"
               src={FBLogo}
               alt="FictionalBank Logo"
-            />
+            /> */}
             <ul>
               {menuOptions.map((item) => (
                 <li key={item.text}>
