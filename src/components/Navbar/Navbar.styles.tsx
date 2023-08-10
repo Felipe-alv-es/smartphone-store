@@ -14,7 +14,7 @@ export const getNavbarStyles = (): SxProps => ({
   display: "flex",
   width: "100%",
   alignItems: "center",
-  background: "#5271FF",
+  background: "#3D55BF",
   padding: "0 60px 0 60px",
   paddingBottom: "12px",
   paddingTop: "12px",

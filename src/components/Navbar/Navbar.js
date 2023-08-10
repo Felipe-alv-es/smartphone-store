@@ -3,13 +3,13 @@ import { Box, Drawer, Icon, Divider, Link } from "@mui/material";
 import {
   getNavbarStyles,
   getDrawerMenuStyle,
-  getImageStyle,
+  // getImageStyle,
   StyledTextField,
   StyledLockButton,
   StyledOutlineButton,
   StyledBurguerButton,
   getMobileContainerStyle,
-  getMobileLogoStyle,
+  // getMobileLogoStyle,
 } from "./Navbar.styles.tsx";
 import {
   AiFillHome,
