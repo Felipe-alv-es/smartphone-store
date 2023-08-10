@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import { Box, Drawer, Icon, Divider, Link } from "@mui/material";
+import { Box, Drawer, Icon, Divider, Link, TextField } from "@mui/material";
 import {
   getNavbarStyles,
   getDrawerMenuStyle,
   // getImageStyle,
-  StyledTextField,
   StyledLockButton,
-  StyledOutlineButton,
   StyledBurguerButton,
   getMobileContainerStyle,
   // getMobileLogoStyle,
@@ -29,21 +27,6 @@ const Navbar = () => {
   }
 
   React.useEffect(() => {
-    if (isMobile) {
-      return;
-    }
-    document
-      .querySelector("#input-id")
-      .addEventListener("keypress", function (e) {
-        const keyCode = e.keyCode ? e.keyCode : e.wich;
-
-        if (keyCode < 47 || keyCode > 58) {
-          e.preventDefault();
-        }
-      });
-  }, [isMobile]);
-
-  React.useEffect(() => {
     window.addEventListener("resize", handleWindowSizeChange);
     return () => {
       window.removeEventListener("resize", handleWindowSizeChange);
@@ -51,11 +34,15 @@ const Navbar = () => {
   }, []);
 
   const menuOptions = [
-    { text: "Inicio", icon: <AiFillHome /> },
-    { text: "Para Clientes", icon: <AiFillDatabase /> },
-    { text: "Para Empresas", icon: <AiFillProject /> },
-    { text: "Benefícios", icon: <AiFillMessage /> },
-    { text: "Ajuda", icon: <AiFillMessage /> },
+    { text: "Oferta do Dia", icon: <AiFillHome /> },
+    { text: "Lançamentos", icon: <AiFillDatabase /> },
+    { text: "Em Destaque", icon: <AiFillProject /> },
+    { text: "Samsung", icon: <AiFillMessage /> },
+    { text: "Xiaomi", icon: <AiFillMessage /> },
+    { text: "Acessórios", icon: <AiFillMessage /> },
+    { text: "Iphone", icon: <AiFillMessage /> },
+    { text: "Lançamentos", icon: <AiFillMessage /> },
+    { text: "Cartão Fictional Mobile", icon: <AiFillMessage /> },
   ];
 
   return (
@@ -98,6 +85,12 @@ const Navbar = () => {
         </Box>
       ) : (
         <Box sx={getNavbarStyles}>
+          <Box>
+            <TextField />
+            <StyledLockButton>
+              <AiOutlineLock />
+            </StyledLockButton>
+          </Box>
           <Box sx={{ display: "flex", alignItems: "center" }}>
             {/* <Box
               sx={getImageStyle}
@@ -113,13 +106,6 @@ const Navbar = () => {
               ))}
             </ul>
           </Box>
-          <Box display={"flex"}>
-            <StyledTextField />
-            <StyledLockButton>
-              <AiOutlineLock />
-            </StyledLockButton>
-          </Box>
-          <StyledOutlineButton>Abra sua conta</StyledOutlineButton>
         </Box>
       )}
     </>

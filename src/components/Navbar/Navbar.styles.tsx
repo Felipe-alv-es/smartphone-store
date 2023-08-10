@@ -1,17 +1,8 @@
 import React from "react";
-import {
-  SxProps,
-  TextFieldProps,
-  Box,
-  IconButton,
-  IconButtonProps,
-  Divider,
-  Button,
-  ButtonProps,
-} from "@mui/material/";
+import { SxProps, Box, IconButton, IconButtonProps } from "@mui/material/";
 
 export const getNavbarStyles = (): SxProps => ({
-  display: "flex",
+  display: "block",
   width: "100%",
   alignItems: "center",
   background: "#3D55BF",
@@ -49,58 +40,6 @@ export const getImageStyle = (): SxProps => ({
   height: "40px",
 });
 
-export const StyledTextField = React.forwardRef<HTMLElement, TextFieldProps>(
-  (props) => (
-    <Box
-      sx={{
-        display: "flex",
-        background: "#f3f3f3",
-        borderRadius: "4px",
-        padding: "8px",
-        alignItems: "center",
-      }}
-      id="input-id"
-    >
-      <input
-        placeholder="agência"
-        type="text"
-        style={{
-          borderStyle: "none",
-          width: "64px",
-          backgroundColor: "#f3f3f3",
-          fontSize: "14px",
-          outline: "none",
-          paddingLeft: "8px",
-          color: "#374957",
-        }}
-      />
-      <Divider
-        orientation="vertical"
-        sx={{
-          background: "#C8C7C9",
-          borderRadius: "4px",
-          borderWidth: "1px",
-          margin: "0 8px 0 8px",
-          height: "16px",
-        }}
-      />
-      <input
-        placeholder="conta"
-        type="text"
-        style={{
-          borderStyle: "none",
-          width: "56px",
-          backgroundColor: "#f3f3f3",
-          fontSize: "14px",
-          outline: "none",
-          color: "#374957",
-          paddingLeft: "8px",
-        }}
-      />
-    </Box>
-  )
-);
-
 export const StyledLockButton = React.forwardRef<HTMLElement, IconButtonProps>(
   (props) => (
     <IconButton
@@ -119,25 +58,6 @@ export const StyledLockButton = React.forwardRef<HTMLElement, IconButtonProps>(
       }}
       {...props}
     ></IconButton>
-  )
-);
-
-export const StyledOutlineButton = React.forwardRef<HTMLElement, ButtonProps>(
-  (props) => (
-    <Button
-      variant="outlined"
-      sx={{
-        color: "white",
-        borderColor: "white",
-        textTransform: "none",
-        padding: "8px 12px 8px 12px",
-        whiteSpace: "nowrap",
-        ":hover": {
-          borderColor: "#E6E6E6",
-        },
-      }}
-      {...props}
-    />
   )
 );
 
