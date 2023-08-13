@@ -1,10 +1,19 @@
 import React, { useState } from "react";
-import { Box, Drawer, Icon, Divider, Link, TextField } from "@mui/material";
+import {
+  Box,
+  Drawer,
+  Icon,
+  Divider,
+  Link,
+  TextField,
+  Typography,
+  IconButton,
+} from "@mui/material";
+import Logo from "../../assets/images/Fictional.png";
 import {
   getNavbarStyles,
   getDrawerMenuStyle,
-  // getImageStyle,
-  StyledLockButton,
+  getImageStyle,
   StyledBurguerButton,
   getMobileContainerStyle,
   // getMobileLogoStyle,
@@ -85,19 +94,47 @@ const Navbar = () => {
         </Box>
       ) : (
         <Box sx={getNavbarStyles}>
-          <Box>
-            <TextField />
-            <StyledLockButton>
-              <AiOutlineLock />
-            </StyledLockButton>
+          <Box
+            sx={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "space-between",
+              margin: "4px",
+              padding: "0 5% 0 5%",
+              alignItems: "center",
+            }}
+          >
+            <Box sx={{ display: "flex" }}>
+              <Box
+                sx={getImageStyle}
+                component="img"
+                src={Logo}
+                alt="FictionalBank Logo"
+              />
+              <TextField sx={{ background: "white" }} />
+              <Box>
+                <Typography color={"white"}>Bem vindo</Typography>
+                <Typography color={"white"}>Entre ou Cadastre-se</Typography>
+              </Box>
+            </Box>
+            <Box>
+              <IconButton>
+                <AiOutlineLock color="white" />
+              </IconButton>
+              <IconButton>
+                <AiOutlineLock color="white" />
+              </IconButton>
+              <IconButton>
+                <AiOutlineLock color="white" />
+              </IconButton>
+            </Box>
           </Box>
-          <Box sx={{ display: "flex", alignItems: "center" }}>
-            {/* <Box
-              sx={getImageStyle}
-              component="img"
-              src={FBLogo}
-              alt="FictionalBank Logo"
-            /> */}
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
             <ul>
               {menuOptions.map((item) => (
                 <li key={item.text}>
