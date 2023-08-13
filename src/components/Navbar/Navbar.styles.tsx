@@ -1,21 +1,20 @@
 import React from "react";
-import { SxProps, Box, IconButton, IconButtonProps } from "@mui/material/";
+import { SxProps, Box } from "@mui/material/";
 
 export const getNavbarStyles = (): SxProps => ({
-  display: "block",
   width: "100%",
-  alignItems: "center",
-  background: "#3D55BF",
-  padding: "0 60px 0 60px",
-  paddingBottom: "12px",
-  paddingTop: "12px",
-  justifyContent: "space-between",
+  background: "#000000",
+  paddingBottom: "8px",
+  paddingTop: "8px",
   "> div > ul": {
     display: "flex",
     listStyle: "none",
     cursor: "pointer",
-    marginLeft: "16px",
+    width: "100%",
+    justifyContent: "space-between",
+    padding: "0 5% 0 5%",
     "> li": {
+      display: "flex",
       "> *": {
         color: "#f3f3f3",
         textDecoration: "none",
@@ -23,7 +22,6 @@ export const getNavbarStyles = (): SxProps => ({
         transition: ".5s",
         fontSize: "14px",
         fontWeight: "medium",
-        height: "40px",
         padding: "16px",
         ":hover": {
           background: "#4966E6",
@@ -37,29 +35,8 @@ export const getNavbarStyles = (): SxProps => ({
 });
 
 export const getImageStyle = (): SxProps => ({
-  height: "40px",
+  height: "50px",
 });
-
-export const StyledLockButton = React.forwardRef<HTMLElement, IconButtonProps>(
-  (props) => (
-    <IconButton
-      sx={{
-        width: "40px",
-        height: "40px",
-        background: "#f3f3f3",
-        borderRadius: "4px",
-        marginLeft: "8px",
-        ":hover": {
-          background: "#E6E6E6",
-        },
-        "> *": {
-          color: "#374957",
-        },
-      }}
-      {...props}
-    ></IconButton>
-  )
-);
 
 export const StyledBurguerButton = ({ isOpen, ...props }) => (
   <Box
