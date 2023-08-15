@@ -1,5 +1,12 @@
 import React from "react";
-import { SxProps, Box } from "@mui/material/";
+import {
+  SxProps,
+  Box,
+  InputBaseProps,
+  InputBase,
+  IconButton,
+} from "@mui/material/";
+import { AiOutlineLock } from "react-icons/ai";
 
 export const getNavbarStyles = (): SxProps => ({
   width: "100%",
@@ -24,10 +31,10 @@ export const getNavbarStyles = (): SxProps => ({
         fontWeight: "medium",
         padding: "16px",
         ":hover": {
-          background: "#4966E6",
+          background: "#4D4D4D",
         },
         ":active": {
-          background: "#415BCC",
+          background: "#333333",
         },
       },
     },
@@ -36,7 +43,47 @@ export const getNavbarStyles = (): SxProps => ({
 
 export const getImageStyle = (): SxProps => ({
   height: "50px",
+  marginRight: "16px",
 });
+
+export const topContainerStyle = (): SxProps => ({
+  width: "100%",
+  display: "flex",
+  justifyContent: "space-between",
+  margin: "4px",
+  padding: "0 5% 0 5%",
+  alignItems: "center",
+});
+
+export const StyledSearch = React.forwardRef<HTMLElement, InputBaseProps>(
+  (props) => (
+    <form>
+      <InputBase
+        placeholder="Buscar na Loja"
+        size="small"
+        sx={{
+          input: {
+            color: "black",
+            borderColor: "white",
+            borderStyle: "solid",
+            borderWidth: "1px",
+            padding: "8px",
+            borderRadius: "2px",
+            background: "white",
+            width: "300px",
+            "::placeholder": {
+              color: "black",
+            },
+          },
+        }}
+        {...props}
+      />
+      <IconButton>
+        <AiOutlineLock color="white" />
+      </IconButton>
+    </form>
+  )
+);
 
 export const StyledBurguerButton = ({ isOpen, ...props }) => (
   <Box
