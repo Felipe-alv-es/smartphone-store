@@ -5,7 +5,6 @@ import {
   Icon,
   Divider,
   Link,
-  TextField,
   Typography,
   IconButton,
 } from "@mui/material";
@@ -16,15 +15,18 @@ import {
   getImageStyle,
   StyledBurguerButton,
   getMobileContainerStyle,
-  // getMobileLogoStyle,
+  topContainerStyle,
+  StyledSearch,
 } from "./Navbar.styles.tsx";
 import {
   AiFillHome,
   AiFillDatabase,
   AiFillProject,
   AiFillMessage,
-  AiOutlineLock,
+  AiOutlineUser,
+  AiOutlineShoppingCart,
 } from "react-icons/ai";
+import { GoBell } from "react-icons/go";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -94,38 +96,34 @@ const Navbar = () => {
         </Box>
       ) : (
         <Box sx={getNavbarStyles}>
-          <Box
-            sx={{
-              width: "100%",
-              display: "flex",
-              justifyContent: "space-between",
-              margin: "4px",
-              padding: "0 5% 0 5%",
-              alignItems: "center",
-            }}
-          >
-            <Box sx={{ display: "flex" }}>
+          <Box sx={topContainerStyle}>
+            <Box sx={{ display: "flex", alignItems: "center" }}>
               <Box
                 sx={getImageStyle}
                 component="img"
                 src={Logo}
                 alt="FictionalBank Logo"
               />
-              <TextField sx={{ background: "white" }} />
-              <Box>
-                <Typography color={"white"}>Bem vindo</Typography>
-                <Typography color={"white"}>Entre ou Cadastre-se</Typography>
+              <StyledSearch />
+              <Box sx={{ marginLeft: "16px" }}>
+                <Typography color={"white"} variant="body2">
+                  Bem vindo
+                </Typography>
+                <Typography color={"white"} variant="body2">
+                  <Link color="inherit">Entre</Link> ou{" "}
+                  <Link color="inherit">Cadastre-se</Link>
+                </Typography>
               </Box>
             </Box>
             <Box>
               <IconButton>
-                <AiOutlineLock color="white" />
+                <GoBell color="white" />
               </IconButton>
               <IconButton>
-                <AiOutlineLock color="white" />
+                <AiOutlineUser color="white" />
               </IconButton>
               <IconButton>
-                <AiOutlineLock color="white" />
+                <AiOutlineShoppingCart color="white" />
               </IconButton>
             </Box>
           </Box>
