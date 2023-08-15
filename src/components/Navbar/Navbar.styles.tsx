@@ -6,7 +6,7 @@ import {
   InputBase,
   IconButton,
 } from "@mui/material/";
-import { AiOutlineLock } from "react-icons/ai";
+import { BsSearch } from "react-icons/bs";
 
 export const getNavbarStyles = (): SxProps => ({
   width: "100%",
@@ -62,7 +62,7 @@ export const StyledSearch = React.forwardRef<HTMLElement, InputBaseProps>(
         placeholder="Buscar na Loja"
         size="small"
         sx={{
-          input: {
+          Input: {
             color: "black",
             borderColor: "white",
             borderStyle: "solid",
@@ -78,8 +78,8 @@ export const StyledSearch = React.forwardRef<HTMLElement, InputBaseProps>(
         }}
         {...props}
       />
-      <IconButton>
-        <AiOutlineLock color="white" />
+      <IconButton sx={{ pointerEvents: "none" }}>
+        <BsSearch color="white" />
       </IconButton>
     </form>
   )
