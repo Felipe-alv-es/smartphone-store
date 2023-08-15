@@ -110,19 +110,24 @@ const Navbar = () => {
                   Bem vindo
                 </Typography>
                 <Typography color={"white"} variant="body2">
-                  <Link color="inherit">Entre</Link> ou{" "}
-                  <Link color="inherit">Cadastre-se</Link>
+                  <Link color="inherit" sx={{ cursor: "pointer" }}>
+                    Entre
+                  </Link>
+                  {" ou "}
+                  <Link color="inherit" sx={{ cursor: "pointer" }}>
+                    Cadastre-se
+                  </Link>
                 </Typography>
               </Box>
             </Box>
             <Box>
-              <IconButton>
+              <IconButton color="primary">
                 <GoBell color="white" />
               </IconButton>
-              <IconButton>
+              <IconButton color="primary">
                 <AiOutlineUser color="white" />
               </IconButton>
-              <IconButton>
+              <IconButton color="primary">
                 <AiOutlineShoppingCart color="white" />
               </IconButton>
             </Box>
