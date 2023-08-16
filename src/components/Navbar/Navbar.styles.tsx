@@ -9,7 +9,7 @@ import {
 import { BsSearch } from "react-icons/bs";
 
 export const getNavbarStyles = (): SxProps => ({
-  width: "100%",
+  width: "100%%",
   background: "#000000",
   paddingBottom: "8px",
   paddingTop: "8px",
@@ -50,7 +50,7 @@ export const topContainerStyle = (): SxProps => ({
   width: "100%",
   display: "flex",
   justifyContent: "space-between",
-  margin: "4px",
+  margin: "4px 0px 4px 0px",
   padding: "0 5% 0 5%",
   alignItems: "center",
 });

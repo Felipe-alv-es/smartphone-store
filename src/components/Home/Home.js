@@ -30,7 +30,6 @@ const Home = () => {
 
   const params = {
     slidesPerView: 1,
-    navigation: isMobile ? false : true,
     pagination: { clickable: true },
     autoplay: {
       delay: 15000,
@@ -40,17 +39,20 @@ const Home = () => {
 
   return (
     <Box sx={getContainerStyle}>
-      <Snackbar
+      {/* <Snackbar
         open
         anchorOrigin={{ vertical: "top", horizontal: "right" }}
-        sx={{ marginTop: "64px", position: "absolute" }}
+        sx={{ marginTop: "120px", position: "absolute" }}
       >
         <Alert variant="filled" severity="warning">
           Site em construção
         </Alert>
-      </Snackbar>
+      </Snackbar> */}
       <Navbar />
-      <Swiper {...params} style={{ paddingTop: isMobile ? "56px" : "" }}>
+      <Swiper
+        {...params}
+        style={{ paddingTop: isMobile ? "56px" : "", marginTop: "4px" }}
+      >
         {homeSlider.map((item) => (
           <SwiperSlide key={item.id}>
             <Box>
@@ -60,17 +62,6 @@ const Home = () => {
                 src={item.image}
                 sx={getImageStyle}
               />
-              <Box sx={getContentBoxStyle}>
-                <Typography sx={getTitleStyle} variant="">
-                  {item.title}
-                </Typography>
-                <Box sx={{ m: 3 }} />
-                <Typography sx={getTextStyle}>{item.text}</Typography>
-                <Box sx={{ m: 3 }} />
-                <Button variant="outlined" sx={getButtonStyle}>
-                  Confira
-                </Button>
-              </Box>
             </Box>
           </SwiperSlide>
         ))}
