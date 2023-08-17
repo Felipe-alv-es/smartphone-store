@@ -1,16 +1,9 @@
 import React, { useState } from "react";
 import Navbar from "../Navbar/Navbar";
-import { Box, Typography, Button, Snackbar, Alert } from "@mui/material";
+import { Box, Snackbar, Alert } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { homeSlider } from "../../assets/utils/homeSlider.tsx";
-import {
-  getImageStyle,
-  getContentBoxStyle,
-  getTitleStyle,
-  getTextStyle,
-  getButtonStyle,
-  getContainerStyle,
-} from "./Home.styles.ts";
+import { getImageStyle, getContainerStyle } from "./Home.styles.ts";
 
 const Home = () => {
   const [width, setWidth] = useState(window.innerWidth);
@@ -39,7 +32,7 @@ const Home = () => {
 
   return (
     <Box sx={getContainerStyle}>
-      {/* <Snackbar
+      <Snackbar
         open
         anchorOrigin={{ vertical: "top", horizontal: "right" }}
         sx={{ marginTop: "120px", position: "absolute" }}
@@ -47,7 +40,7 @@ const Home = () => {
         <Alert variant="filled" severity="warning">
           Site em construção
         </Alert>
-      </Snackbar> */}
+      </Snackbar>
       <Navbar />
       <Swiper
         {...params}
