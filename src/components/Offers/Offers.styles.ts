@@ -1,9 +1,11 @@
 export const getContainerStyle = () => ({
   display: "flex",
   padding: "16px 32px 16px 32px",
+  alignItems: "center",
   "> div > div > .swiper-slide": {
     background: "#D9D9D9",
     borderRadius: "8px",
+    cursor: "pointer",
   },
   "@media(max-width: 544px)": {
     padding: 0,
@@ -29,4 +31,10 @@ export const getOfferTypeStyle = () => ({
   fontWeight: "bold",
   textAlign: "center",
   marginTop: "16px",
+});
+
+export const getIconButtonStyle = () => ({
+  background: "#D9D9D9",
+  borderRadius: "32px",
+  height: "fit-content",
 });

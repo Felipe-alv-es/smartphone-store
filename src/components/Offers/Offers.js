@@ -1,16 +1,21 @@
 import React, { useState } from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, IconButton } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import offersSlider from "../../assets/utils/offersSlider.tsx";
+import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import {
   getContainerStyle,
   getPageTitleStyle,
   getContentStyle,
   getOfferTypeStyle,
+  getIconButtonStyle,
 } from "./Offers.styles.ts";
 
 const Offers = () => {
   const [width, setWidth] = useState(window.innerWidth);
+  const [swiper, setSwiper] = useState();
+  const swipeNextPage = () => swiper.slideNext();
+  const swipePreviousPage = () => swiper.slidePrev();
 
   function handleWindowSizeChange() {
     setWidth(window.innerWidth);
@@ -28,6 +33,7 @@ const Offers = () => {
   const params = {
     slidesPerView: "5",
     spaceBetween: "48px",
+    onSwiper: setSwiper,
     pagination: isMobile ? true : false,
     breakpoints: {
       200: {},
@@ -46,9 +52,12 @@ const Offers = () => {
     <Box>
       <Typography sx={getPageTitleStyle}>{"Conheça nossas ofertas"}</Typography>
       <Box sx={getContainerStyle}>
+        <IconButton onClick={swipePreviousPage} sx={getIconButtonStyle}>
+          <BsChevronLeft />
+        </IconButton>
         <Swiper {...params}>
           {offersSlider.map((item) => (
-            <SwiperSlide key={item.id} style={{ padding: "8px" }}>
+            <SwiperSlide key={item.id} style={{ padding: "16px" }}>
               <Box sx={getContentStyle}>
                 <Box component="img" alt={item.title} src={item.img} />
                 <Typography variant="body1" sx={getOfferTypeStyle}>
@@ -58,6 +67,9 @@ const Offers = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+        <IconButton onClick={swipeNextPage} sx={getIconButtonStyle}>
+          <BsChevronRight />
+        </IconButton>
       </Box>
     </Box>
   );
