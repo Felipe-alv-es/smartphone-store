@@ -1,7 +1,15 @@
 import React, { useState } from "react";
-import { Box, Typography, IconButton } from "@mui/material";
+import {
+  Box,
+  Typography,
+  IconButton,
+  RadioGroup,
+  FormControl,
+  FormControlLabel,
+  Radio,
+} from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
-import offersSlider from "../../assets/utils/offersSlider.tsx";
+import productsSlider from "../../assets/utils/productsSlider.tsx";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import {
   getContainerStyle,
@@ -9,9 +17,12 @@ import {
   getContentStyle,
   getOfferTypeStyle,
   getIconButtonStyle,
-} from "./Offers.styles.ts";
+  getChipContainerStyle,
+  StyledTypography,
+  StyledButton,
+} from "./Featuredproducts.styles.tsx";
 
-const Offers = () => {
+const Featuredproducts = () => {
   const [width, setWidth] = useState(window.innerWidth);
   const [swiper, setSwiper] = useState();
   const swipeNextPage = () => swiper.slideNext();
@@ -31,7 +42,6 @@ const Offers = () => {
   const isMobile = width <= 768;
 
   const params = {
-    slidesPerView: "5",
     spaceBetween: "48px",
     onSwiper: setSwiper,
     pagination: isMobile ? true : false,
@@ -59,20 +69,42 @@ const Offers = () => {
   };
 
   return (
-    <Box>
-      <Typography sx={getPageTitleStyle}>{"Conheça nossas ofertas"}</Typography>
+    <Box sx={{ marginTop: "5em" }}>
+      <Typography sx={getPageTitleStyle}>{"Produtos em destaque"}</Typography>
       <Box sx={getContainerStyle}>
         <IconButton onClick={swipePreviousPage} sx={getIconButtonStyle}>
           <BsChevronLeft />
         </IconButton>
         <Swiper {...params}>
-          {offersSlider.map((item) => (
-            <SwiperSlide key={item.id} style={{ padding: "16px" }}>
+          {productsSlider.map((item) => (
+            <SwiperSlide
+              key={item.id}
+              style={{ padding: "32px", borderRadius: "16px" }}
+            >
               <Box sx={getContentStyle}>
                 <Box component="img" alt={item.title} src={item.img} />
                 <Typography variant="body1" sx={getOfferTypeStyle}>
                   {item.title}
                 </Typography>
+                <Box sx={getChipContainerStyle}>
+                  <FormControl>
+                    <RadioGroup defaultValue={item.version1} row>
+                      <FormControlLabel
+                        value={item.version1}
+                        control={<Radio checkedIcon={<BsChevronLeft />} />}
+                        label={item.version1}
+                      />
+                      <FormControlLabel
+                        value={item.version2}
+                        control={<Radio />}
+                        label={item.version2}
+                      />
+                    </RadioGroup>
+                  </FormControl>
+                </Box>
+                <StyledTypography>{item.value1}</StyledTypography>
+                <StyledTypography>{item.value2}</StyledTypography>
+                <StyledButton>Mais detalhes</StyledButton>
               </Box>
             </SwiperSlide>
           ))}
@@ -85,4 +117,4 @@ const Offers = () => {
   );
 };
 
-export default Offers;
+export default Featuredproducts;
