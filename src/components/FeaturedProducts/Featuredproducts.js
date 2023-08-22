@@ -56,7 +56,7 @@ const Featuredproducts = () => {
         slidesPerView: 4,
       },
       1500: {
-        slidesPerView: 5, // loop não funciona com +4 slides, quebra o stilo
+        slidesPerView: 5,
       },
       1750: {
         slidesPerView: 6,
@@ -86,22 +86,38 @@ const Featuredproducts = () => {
                 <Typography variant="body1" sx={getOfferTypeStyle}>
                   {item.title}
                 </Typography>
-                <Box sx={getChipContainerStyle}>
-                  <FormControl>
-                    <RadioGroup defaultValue={item.version1} row>
-                      <FormControlLabel
-                        value={item.version1}
-                        control={<Radio checkedIcon={<BsChevronLeft />} />}
-                        label={item.version1}
-                      />
-                      <FormControlLabel
-                        value={item.version2}
-                        control={<Radio />}
-                        label={item.version2}
-                      />
-                    </RadioGroup>
-                  </FormControl>
-                </Box>
+                <FormControl sx={getChipContainerStyle}>
+                  <RadioGroup
+                    defaultValue={item.version1}
+                    sx={{
+                      justifyContent: "space-between",
+                      paddingLeft: "12px",
+                      ".MuiTypography-root": {
+                        padding: "4px 8px 4px 8px",
+                        borderRadius: "12px",
+                        borderWidth: "1px",
+                        fontWeight: "bold",
+                        borderStyle: "solid",
+                        borderColor: "transparent",
+                      },
+                      ".Mui-checked + .MuiTypography-root": {
+                        borderColor: "black",
+                      },
+                    }}
+                    row
+                  >
+                    <FormControlLabel
+                      value={item.version1}
+                      control={<Radio sx={{ display: "none" }} />}
+                      label={item.version1}
+                    />
+                    <FormControlLabel
+                      value={item.version2}
+                      control={<Radio sx={{ display: "none" }} />}
+                      label={item.version2}
+                    />
+                  </RadioGroup>
+                </FormControl>
                 <StyledTypography>{item.value1}</StyledTypography>
                 <StyledTypography>{item.value2}</StyledTypography>
                 <StyledButton>Mais detalhes</StyledButton>
