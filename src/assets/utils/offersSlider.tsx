@@ -36,6 +36,11 @@ const serviceSlider = [
     title: "Acessórios",
     img: Offer6,
   },
+  {
+    id: 6,
+    title: "Acessórios",
+    img: Offer6,
+  },
 ];
 
 export default serviceSlider;
