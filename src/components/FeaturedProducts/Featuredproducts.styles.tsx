@@ -67,6 +67,7 @@ export const StyledButton = (props) => {
         textTransform: "none",
         whiteSpace: "nowrap",
         fontWeight: "medium",
+        borderRadius: "12px",
         ":hover": {
           borderColor: "#8C8C8C",
         },

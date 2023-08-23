@@ -59,7 +59,7 @@ const Featuredproducts = () => {
         slidesPerView: 5,
       },
       1750: {
-        slidesPerView: 6,
+        slidesPerView: 5,
       },
     },
     style: {
@@ -99,6 +99,9 @@ const Featuredproducts = () => {
                         fontWeight: "bold",
                         borderStyle: "solid",
                         borderColor: "transparent",
+                        ":hover": {
+                          background: "#CCCCCC",
+                        },
                       },
                       ".Mui-checked + .MuiTypography-root": {
                         borderColor: "black",

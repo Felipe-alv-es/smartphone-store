@@ -40,16 +40,16 @@ const Offers = () => {
         slidesPerView: 1,
       },
       850: {
-        slidesPerView: 2,
-      },
-      1200: {
         slidesPerView: 4,
       },
+      1200: {
+        slidesPerView: 5,
+      },
       1500: {
-        slidesPerView: 5, // loop não funciona com +4 slides, quebra o stilo
+        slidesPerView: 6, // loop não funciona com +4 slides, quebra o stilo
       },
       1750: {
-        slidesPerView: 6,
+        slidesPerView: 7,
       },
     },
     style: {
