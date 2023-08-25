@@ -6,7 +6,7 @@ export const getContainerStyle = () => ({
     background: "#D9D9D9",
     borderRadius: "8px",
     cursor: "pointer",
-    height: "100%",
+    height: "auto",
   },
   "@media(max-width: 544px)": {
     padding: 0,

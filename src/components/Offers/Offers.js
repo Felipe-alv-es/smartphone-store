@@ -46,7 +46,7 @@ const Offers = () => {
         slidesPerView: 5,
       },
       1500: {
-        slidesPerView: 6, // loop não funciona com +4 slides, quebra o stilo
+        slidesPerView: 6,
       },
       1750: {
         slidesPerView: 7,

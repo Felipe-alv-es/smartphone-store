@@ -44,7 +44,7 @@ const serviceSlider = [
   },
   {
     id: 5,
-    title: "Nokia",
+    title: "Nokia 7 Plus",
     img: Product5,
     version1: "128GB",
     version2: "256GB",
@@ -53,12 +53,12 @@ const serviceSlider = [
   },
   {
     id: 6,
-    title: "Acessórios",
+    title: "Joystick DualShock 4",
     img: Product6,
     version1: "128GB",
     version2: "256GB",
-    value1: "De: R$: 4.799,00",
-    value2: "Por: R$: 4.599,00",
+    value1: "De: R$: 250,00",
+    value2: "Por: R$: 180,00",
   },
 ];
 
