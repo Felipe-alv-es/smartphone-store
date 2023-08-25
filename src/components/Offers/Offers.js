@@ -46,7 +46,7 @@ const Offers = () => {
         slidesPerView: 5,
       },
       1500: {
-        slidesPerView: 6, // loop não funciona com +4 slides, quebra o stilo
+        slidesPerView: 6,
       },
       1750: {
         slidesPerView: 7,
@@ -67,7 +67,12 @@ const Offers = () => {
         </IconButton>
         <Swiper {...params}>
           {offersSlider.map((item) => (
-            <SwiperSlide key={item.id} style={{ padding: "16px" }}>
+            <SwiperSlide
+              key={item.id}
+              style={{
+                padding: "16px",
+              }}
+            >
               <Box sx={getContentStyle}>
                 <Box component="img" alt={item.title} src={item.img} />
                 <Typography variant="body1" sx={getOfferTypeStyle}>

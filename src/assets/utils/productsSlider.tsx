@@ -2,6 +2,8 @@ import Product1 from "../images/FeaturedProductsBanner/Product1.png";
 import Product2 from "../images/FeaturedProductsBanner/Product2.png";
 import Product3 from "../images/FeaturedProductsBanner/Product3.png";
 import Product4 from "../images/FeaturedProductsBanner/Product4.png";
+import Product5 from "../images/FeaturedProductsBanner/Product5.png";
+import Product6 from "../images/FeaturedProductsBanner/Product6.png";
 
 const serviceSlider = [
   {
@@ -42,8 +44,8 @@ const serviceSlider = [
   },
   {
     id: 5,
-    title: "Nokia",
-    img: Product1,
+    title: "Nokia 7 Plus",
+    img: Product5,
     version1: "128GB",
     version2: "256GB",
     value1: "De: R$: 4.799,00",
@@ -51,12 +53,12 @@ const serviceSlider = [
   },
   {
     id: 6,
-    title: "Acessórios",
-    img: Product1,
+    title: "Joystick DualShock 4",
+    img: Product6,
     version1: "128GB",
     version2: "256GB",
-    value1: "De: R$: 4.799,00",
-    value2: "Por: R$: 4.599,00",
+    value1: "De: R$: 250,00",
+    value2: "Por: R$: 180,00",
   },
 ];
 

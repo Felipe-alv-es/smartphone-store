@@ -2,10 +2,11 @@ export const getContainerStyle = () => ({
   display: "flex",
   padding: "16px 32px 16px 32px",
   alignItems: "center",
-  "> div > div > .swiper-slide": {
+  ".swiper-slide": {
     background: "#D9D9D9",
     borderRadius: "8px",
     cursor: "pointer",
+    height: "auto",
   },
   "@media(max-width: 544px)": {
     padding: 0,
@@ -25,6 +26,9 @@ export const getContentStyle = () => ({
   height: "100%",
   display: "grid",
   placeItems: "center",
+  "> *": {
+    maxWidth: "100%",
+  },
 });
 
 export const getOfferTypeStyle = () => ({

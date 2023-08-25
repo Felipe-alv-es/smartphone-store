@@ -4,6 +4,7 @@ import Offer3 from "../images/OfferBanner/Offer3.png";
 import Offer4 from "../images/OfferBanner/Offer4.png";
 import Offer5 from "../images/OfferBanner/Offer5.png";
 import Offer6 from "../images/OfferBanner/Offer6.png";
+import Offer7 from "../images/OfferBanner/Offer7.png";
 
 const serviceSlider = [
   {
@@ -33,13 +34,13 @@ const serviceSlider = [
   },
   {
     id: 6,
-    title: "Acessórios",
+    title: "Motorola",
     img: Offer6,
   },
   {
     id: 6,
     title: "Acessórios",
-    img: Offer6,
+    img: Offer7,
   },
 ];
 

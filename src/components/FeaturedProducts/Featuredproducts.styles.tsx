@@ -5,7 +5,7 @@ export const getContainerStyle = () => ({
   display: "flex",
   padding: "16px 32px 16px 32px",
   alignItems: "center",
-  "> div > div > .swiper-slide": {
+  ".swiper-slide": {
     background: "#D9D9D9",
     borderRadius: "8px",
     cursor: "pointer",
