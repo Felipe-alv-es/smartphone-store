@@ -67,7 +67,12 @@ const Offers = () => {
         </IconButton>
         <Swiper {...params}>
           {offersSlider.map((item) => (
-            <SwiperSlide key={item.id} style={{ padding: "16px" }}>
+            <SwiperSlide
+              key={item.id}
+              style={{
+                padding: "16px",
+              }}
+            >
               <Box sx={getContentStyle}>
                 <Box component="img" alt={item.title} src={item.img} />
                 <Typography variant="body1" sx={getOfferTypeStyle}>
