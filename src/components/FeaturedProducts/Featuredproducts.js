@@ -7,6 +7,7 @@ import {
   FormControl,
   FormControlLabel,
   Radio,
+  Paper,
 } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import productsSlider from "../../assets/utils/productsSlider.tsx";
@@ -20,6 +21,7 @@ import {
   getChipContainerStyle,
   StyledTypography,
   StyledButton,
+  getRadiogroupStyle,
 } from "./Featuredproducts.styles.tsx";
 
 const Featuredproducts = () => {
@@ -42,7 +44,7 @@ const Featuredproducts = () => {
   const isMobile = width <= 768;
 
   const params = {
-    spaceBetween: "48px",
+    spaceBetween: "32px",
     onSwiper: setSwiper,
     pagination: isMobile ? true : false,
     breakpoints: {
@@ -79,9 +81,13 @@ const Featuredproducts = () => {
           {productsSlider.map((item) => (
             <SwiperSlide
               key={item.id}
-              style={{ padding: "32px", borderRadius: "16px" }}
+              style={{
+                background: "transparent",
+                padding: "1px",
+                borderRadius: "16px",
+              }}
             >
-              <Box sx={getContentStyle}>
+              <Paper sx={getContentStyle}>
                 <Box component="img" alt={item.title} src={item.img} />
                 <Typography variant="body1" sx={getOfferTypeStyle}>
                   {item.title}
@@ -89,24 +95,7 @@ const Featuredproducts = () => {
                 <FormControl sx={getChipContainerStyle}>
                   <RadioGroup
                     defaultValue={item.version1}
-                    sx={{
-                      justifyContent: "space-between",
-                      paddingLeft: "12px",
-                      ".MuiTypography-root": {
-                        padding: "4px 8px 4px 8px",
-                        borderRadius: "12px",
-                        borderWidth: "1px",
-                        fontWeight: "bold",
-                        borderStyle: "solid",
-                        borderColor: "transparent",
-                        ":hover": {
-                          background: "#CCCCCC",
-                        },
-                      },
-                      ".Mui-checked + .MuiTypography-root": {
-                        borderColor: "black",
-                      },
-                    }}
+                    sx={getRadiogroupStyle}
                     row
                   >
                     <FormControlLabel
@@ -124,7 +113,7 @@ const Featuredproducts = () => {
                 <StyledTypography>{item.value1}</StyledTypography>
                 <StyledTypography>{item.value2}</StyledTypography>
                 <StyledButton>Mais detalhes</StyledButton>
-              </Box>
+              </Paper>
             </SwiperSlide>
           ))}
         </Swiper>
