@@ -25,6 +25,8 @@ export const getContentStyle = () => ({
   height: "100%",
   display: "grid",
   placeItems: "center",
+  padding: "32px",
+  borderRadius: "16px",
   "> *": {
     maxWidth: "100%",
   },
@@ -37,7 +39,7 @@ export const getOfferTypeStyle = () => ({
 });
 
 export const getIconButtonStyle = () => ({
-  background: "#D9D9D9",
+  background: "#E6E6E6",
   borderRadius: "32px",
   height: "fit-content",
 });
@@ -47,6 +49,25 @@ export const getChipContainerStyle = () => ({
   justifyContent: "space-between",
   display: "flex",
   width: "100%",
+});
+
+export const getRadiogroupStyle = () => ({
+  justifyContent: "space-between",
+  paddingLeft: "12px",
+  ".MuiTypography-root": {
+    padding: "4px 8px 4px 8px",
+    borderRadius: "12px",
+    borderWidth: "1px",
+    fontWeight: "bold",
+    borderStyle: "solid",
+    borderColor: "transparent",
+    ":hover": {
+      background: "#E6E6E6",
+    },
+  },
+  ".Mui-checked + .MuiTypography-root": {
+    borderColor: "black",
+  },
 });
 
 export const StyledTypography = (props) => {
