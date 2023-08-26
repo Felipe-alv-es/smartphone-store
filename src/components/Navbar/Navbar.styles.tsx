@@ -5,6 +5,10 @@ import {
   InputBaseProps,
   InputBase,
   IconButton,
+  TypographyProps,
+  Typography,
+  Link,
+  LinkProps,
 } from "@mui/material/";
 import { BsSearch } from "react-icons/bs";
 
@@ -57,29 +61,37 @@ export const topContainerStyle = (): SxProps => ({
 
 export const StyledSearch = React.forwardRef<HTMLElement, InputBaseProps>(
   (props) => (
-    <form>
+    <form style={{ display: "flex", justifyContent: "right" }}>
       <InputBase
         placeholder="Buscar na Loja"
-        size="small"
         sx={{
           Input: {
             color: "black",
             borderColor: "white",
             borderStyle: "solid",
             borderWidth: "1px",
-            padding: "8px",
+            padding: "8px 24px 8px 8px",
             borderRadius: "2px",
             background: "white",
-            width: "300px",
             "::placeholder": {
               color: "black",
+            },
+            "@media(max-width: 544px)": {
+              // margin: "0px 16px 0px 16px",
             },
           },
         }}
         {...props}
       />
-      <IconButton sx={{ pointerEvents: "none" }}>
-        <BsSearch color="white" />
+      <IconButton
+        size="small"
+        sx={{
+          pointerEvents: "none",
+          position: "absolute",
+          translate: "0px 6px",
+        }}
+      >
+        <BsSearch color="black" />
       </IconButton>
     </form>
   )
@@ -158,10 +170,11 @@ export const getDrawerMenuStyle = (): SxProps => ({
 export const getMobileContainerStyle = (): SxProps => ({
   display: "flex",
   width: "100%",
-  justifyContent: "right",
+  justifyContent: "space-between",
   alignItems: "center",
-  background: "#5271FF",
+  background: "#000000",
   position: "fixed",
+  borderBottom: "2px solid #FFFFFF",
   zIndex: 1400, // Todo: A navbar só fica a frente do drawer caso o Zindex seja mais que 1400
 });
 
@@ -171,3 +184,11 @@ export const getMobileLogoStyle = (): SxProps => ({
   left: 0,
   marginLeft: "4px",
 });
+
+export const StyledTypohraphy = React.forwardRef<HTMLElement, TypographyProps>(
+  (props) => <Typography color={"white"} variant="body2" {...props} />
+);
+
+export const StyledLink = React.forwardRef<HTMLElement, LinkProps>((props) => (
+  <Link color="inherit" sx={{ cursor: "pointer" }} {...props} />
+));

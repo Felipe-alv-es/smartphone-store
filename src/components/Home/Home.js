@@ -44,7 +44,10 @@ const Home = () => {
       <Navbar />
       <Swiper
         {...params}
-        style={{ paddingTop: isMobile ? "56px" : "", marginTop: "4px" }}
+        style={{
+          paddingTop: isMobile ? "56px" : "",
+          marginTop: isMobile ? "" : "4px",
+        }}
       >
         {homeSlider.map((item) => (
           <SwiperSlide key={item.id}>
