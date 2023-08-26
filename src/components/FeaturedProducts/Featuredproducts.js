@@ -44,11 +44,11 @@ const Featuredproducts = () => {
   const isMobile = width <= 768;
 
   const params = {
-    spaceBetween: "32px",
+    spaceBetween: isMobile ? "8px" : "32px",
     onSwiper: setSwiper,
     breakpoints: {
       200: {
-        slidesPerView: 2,
+        slidesPerView: 1.1,
       },
       850: {
         slidesPerView: 3,

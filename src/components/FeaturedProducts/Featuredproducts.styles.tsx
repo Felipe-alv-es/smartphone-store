@@ -11,7 +11,7 @@ export const getContainerStyle = () => ({
     cursor: "pointer",
   },
   "@media(max-width: 544px)": {
-    padding: "16px",
+    padding: "0px 4px 0px 16px",
   },
 });
 
