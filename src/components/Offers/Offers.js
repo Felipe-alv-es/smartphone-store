@@ -32,12 +32,13 @@ const Offers = () => {
 
   const params = {
     slidesPerView: "5",
-    spaceBetween: "48px",
+    spaceBetween: isMobile ? "8px" : "48px",
     onSwiper: setSwiper,
     pagination: isMobile ? true : false,
+    grid: isMobile ? { rows: 2, fill: "row" } : null,
     breakpoints: {
       200: {
-        slidesPerView: 1,
+        slidesPerView: 2,
       },
       850: {
         slidesPerView: 4,
@@ -62,9 +63,11 @@ const Offers = () => {
     <Box>
       <Typography sx={getPageTitleStyle}>{"Conheça nossas ofertas"}</Typography>
       <Box sx={getContainerStyle}>
-        <IconButton onClick={swipePreviousPage} sx={getIconButtonStyle}>
-          <BsChevronLeft />
-        </IconButton>
+        {isMobile ? null : (
+          <IconButton onClick={swipePreviousPage} sx={getIconButtonStyle}>
+            <BsChevronLeft />
+          </IconButton>
+        )}
         <Swiper {...params}>
           {offersSlider.map((item) => (
             <SwiperSlide
@@ -82,9 +85,11 @@ const Offers = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-        <IconButton onClick={swipeNextPage} sx={getIconButtonStyle}>
-          <BsChevronRight />
-        </IconButton>
+        {isMobile ? null : (
+          <IconButton onClick={swipeNextPage} sx={getIconButtonStyle}>
+            <BsChevronRight />
+          </IconButton>
+        )}
       </Box>
     </Box>
   );

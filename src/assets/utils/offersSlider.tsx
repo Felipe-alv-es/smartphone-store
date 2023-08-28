@@ -5,6 +5,7 @@ import Offer4 from "../images/OfferBanner/Offer4.png";
 import Offer5 from "../images/OfferBanner/Offer5.png";
 import Offer6 from "../images/OfferBanner/Offer6.png";
 import Offer7 from "../images/OfferBanner/Offer7.png";
+import Offer8 from "../images/OfferBanner/Offer8.png";
 
 const serviceSlider = [
   {
@@ -38,9 +39,14 @@ const serviceSlider = [
     img: Offer6,
   },
   {
-    id: 6,
-    title: "Acessórios",
+    id: 7,
+    title: "Infinix",
     img: Offer7,
+  },
+  {
+    id: 8,
+    title: "Acessórios",
+    img: Offer8,
   },
 ];
 
