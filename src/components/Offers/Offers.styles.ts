@@ -11,6 +11,18 @@ export const getContainerStyle = () => ({
   "@media(max-width: 544px)": {
     padding: 0,
   },
+  ".swiper-pagination": {
+    position: "relative",
+    marginTop: "1em",
+    "> span": {
+      height: "8px",
+      width: "16px",
+      borderColor: "#000000",
+      borderStyle: "solid",
+      background: "#000000",
+      borderRadius: "8px",
+    },
+  },
 });
 
 export const getPageTitleStyle = () => ({

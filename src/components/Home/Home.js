@@ -7,6 +7,12 @@ import { getImageStyle, getContainerStyle } from "./Home.styles.ts";
 
 const Home = () => {
   const [width, setWidth] = useState(window.innerWidth);
+  const [open, setOpen] = useState(true);
+
+  React.useEffect(() => {
+    setOpen(true);
+    setTimeout(setOpen, 10000, false);
+  }, []);
 
   function handleWindowSizeChange() {
     setWidth(window.innerWidth);
@@ -33,7 +39,7 @@ const Home = () => {
   return (
     <Box sx={getContainerStyle}>
       <Snackbar
-        open
+        open={open}
         anchorOrigin={{ vertical: "top", horizontal: "right" }}
         sx={{ marginTop: "120px", position: "absolute" }}
       >
@@ -44,7 +50,10 @@ const Home = () => {
       <Navbar />
       <Swiper
         {...params}
-        style={{ paddingTop: isMobile ? "56px" : "", marginTop: "4px" }}
+        style={{
+          paddingTop: isMobile ? "56px" : "",
+          marginTop: isMobile ? "" : "4px",
+        }}
       >
         {homeSlider.map((item) => (
           <SwiperSlide key={item.id}>

@@ -10,6 +10,10 @@ export const getContainerStyle = () => ({
   display: "flex",
   justifyContent: "space-between",
   margin: "16px 72px 32px 72px",
+  "@media(max-width: 544px)": {
+    margin: "16px",
+    display: "block",
+  },
 });
 
 export const getOptionsStyle = () => ({
@@ -19,6 +23,9 @@ export const getOptionsStyle = () => ({
   padding: "16px",
   display: "grid",
   placeItems: "center",
+  "@media(max-width: 544px)": {
+    margin: "0 0 16px 0",
+  },
 });
 
 export const getContentStyle = () => ({

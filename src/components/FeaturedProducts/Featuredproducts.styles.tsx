@@ -10,6 +10,9 @@ export const getContainerStyle = () => ({
     borderRadius: "8px",
     cursor: "pointer",
   },
+  "@media(max-width: 544px)": {
+    padding: "0px 4px 0px 16px",
+  },
 });
 
 export const getPageTitleStyle = () => ({
@@ -24,11 +27,16 @@ export const getContentStyle = () => ({
   width: "100%",
   height: "100%",
   display: "grid",
-  placeItems: "center",
+  gridTemplateAreas: `'image''content''button'`,
+  placeItems: "center stretch",
   padding: "32px",
   borderRadius: "16px",
   "> *": {
     maxWidth: "100%",
+  },
+  "@media(max-width: 544px)": {
+    padding: "16px",
+    gridTemplateAreas: `'image content''image button'`,
   },
 });
 
@@ -46,14 +54,12 @@ export const getIconButtonStyle = () => ({
 
 export const getChipContainerStyle = () => ({
   margin: "16px 0 32px 0",
-  justifyContent: "space-between",
-  display: "flex",
   width: "100%",
+  placeItems: "center",
+  translate: "8px 0px",
 });
 
 export const getRadiogroupStyle = () => ({
-  justifyContent: "space-between",
-  paddingLeft: "12px",
   ".MuiTypography-root": {
     padding: "4px 8px 4px 8px",
     borderRadius: "12px",
@@ -72,7 +78,11 @@ export const getRadiogroupStyle = () => ({
 
 export const StyledTypography = (props) => {
   return (
-    <Typography variant="body1" sx={{ fontWeight: "medium" }} {...props} />
+    <Typography
+      variant="body1"
+      sx={{ fontWeight: "medium", textAlign: "center" }}
+      {...props}
+    />
   );
 };
 

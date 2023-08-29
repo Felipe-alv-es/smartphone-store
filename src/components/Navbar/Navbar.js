@@ -1,14 +1,7 @@
 import React, { useState } from "react";
-import {
-  Box,
-  Drawer,
-  Icon,
-  Divider,
-  Link,
-  Typography,
-  IconButton,
-} from "@mui/material";
+import { Box, Drawer, Icon, Divider, Link, IconButton } from "@mui/material";
 import Logo from "../../assets/images/Fictional.png";
+import FMLogo from "../../assets/images/FM.png";
 import {
   getNavbarStyles,
   getDrawerMenuStyle,
@@ -17,6 +10,8 @@ import {
   getMobileContainerStyle,
   topContainerStyle,
   StyledSearch,
+  StyledTypohraphy,
+  StyledLink,
 } from "./Navbar.styles.tsx";
 import {
   AiFillHome,
@@ -60,12 +55,11 @@ const Navbar = () => {
     <>
       {isMobile ? (
         <Box sx={getMobileContainerStyle}>
-          {/* <Box
-            sx={getMobileLogoStyle}
-            component="img"
-            src={FBLogo}
-            alt="FictionalBank Logo"
-          /> */}
+          <Box component="img" src={FMLogo} alt="FictionalBank Logo" />
+          <StyledSearch />
+          <IconButton color="primary">
+            <AiOutlineShoppingCart color="white" />
+          </IconButton>
           <StyledBurguerButton
             onClick={() => setIsOpen(isOpen ? false : true)}
             isOpen={isOpen}
@@ -97,7 +91,12 @@ const Navbar = () => {
       ) : (
         <Box sx={getNavbarStyles}>
           <Box sx={topContainerStyle}>
-            <Box sx={{ display: "flex", alignItems: "center" }}>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
               <Box
                 sx={getImageStyle}
                 component="img"
@@ -106,21 +105,15 @@ const Navbar = () => {
               />
               <StyledSearch />
               <Box sx={{ marginLeft: "16px" }}>
-                <Typography color={"white"} variant="body2">
-                  Bem vindo
-                </Typography>
-                <Typography color={"white"} variant="body2">
-                  <Link color="inherit" sx={{ cursor: "pointer" }}>
-                    Entre
-                  </Link>
+                <StyledTypohraphy>Bem vindo</StyledTypohraphy>
+                <StyledTypohraphy>
+                  <StyledLink>Entre</StyledLink>
                   {" ou "}
-                  <Link color="inherit" sx={{ cursor: "pointer" }}>
-                    Cadastre-se
-                  </Link>
-                </Typography>
+                  <StyledLink>Cadastre-se</StyledLink>
+                </StyledTypohraphy>
               </Box>
             </Box>
-            <Box>
+            <Box sx={{ display: "flex" }}>
               <IconButton color="primary">
                 <GoBell color="white" />
               </IconButton>

@@ -13,6 +13,10 @@ export const getContainerStyle = () => ({
       borderStyle: "solid",
       background: "transparent",
       borderWidth: "2px",
+      "@media(max-width: 544px)": {
+        height: "8px",
+        width: "8px",
+      },
     },
   },
 });
@@ -20,8 +24,6 @@ export const getContainerStyle = () => ({
 export const getImageStyle = () => ({
   width: "100%",
   "@media(max-width: 544px)": {
-    width: "auto",
-    height: "500px",
-    objectPosition: "top 0px right 14em",
+    width: "100%",
   },
 });

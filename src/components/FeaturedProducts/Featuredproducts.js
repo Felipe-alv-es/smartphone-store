@@ -44,15 +44,14 @@ const Featuredproducts = () => {
   const isMobile = width <= 768;
 
   const params = {
-    spaceBetween: "32px",
+    spaceBetween: isMobile ? "8px" : "32px",
     onSwiper: setSwiper,
-    pagination: isMobile ? true : false,
     breakpoints: {
       200: {
-        slidesPerView: 1,
+        slidesPerView: 1.1,
       },
       850: {
-        slidesPerView: 2,
+        slidesPerView: 3,
       },
       1200: {
         slidesPerView: 4,
@@ -65,7 +64,7 @@ const Featuredproducts = () => {
       },
     },
     style: {
-      margin: isMobile ? "0 24px 0 24px" : "0 36px 0 36px",
+      margin: isMobile ? "0 0 0 0" : "0 36px 0 36px",
       background: "transparent",
     },
   };
@@ -74,9 +73,12 @@ const Featuredproducts = () => {
     <Box sx={{ marginTop: "5em" }}>
       <Typography sx={getPageTitleStyle}>{"Produtos em destaque"}</Typography>
       <Box sx={getContainerStyle}>
-        <IconButton onClick={swipePreviousPage} sx={getIconButtonStyle}>
-          <BsChevronLeft />
-        </IconButton>
+        {isMobile ? null : (
+          <IconButton onClick={swipePreviousPage} sx={getIconButtonStyle}>
+            <BsChevronLeft />
+          </IconButton>
+        )}
+
         <Swiper {...params}>
           {productsSlider.map((item) => (
             <SwiperSlide
@@ -88,38 +90,51 @@ const Featuredproducts = () => {
               }}
             >
               <Paper sx={getContentStyle}>
-                <Box component="img" alt={item.title} src={item.img} />
-                <Typography variant="body1" sx={getOfferTypeStyle}>
-                  {item.title}
-                </Typography>
-                <FormControl sx={getChipContainerStyle}>
-                  <RadioGroup
-                    defaultValue={item.version1}
-                    sx={getRadiogroupStyle}
-                    row
-                  >
-                    <FormControlLabel
-                      value={item.version1}
-                      control={<Radio sx={{ display: "none" }} />}
-                      label={item.version1}
-                    />
-                    <FormControlLabel
-                      value={item.version2}
-                      control={<Radio sx={{ display: "none" }} />}
-                      label={item.version2}
-                    />
-                  </RadioGroup>
-                </FormControl>
-                <StyledTypography>{item.value1}</StyledTypography>
-                <StyledTypography>{item.value2}</StyledTypography>
-                <StyledButton>Mais detalhes</StyledButton>
+                <Box
+                  component="img"
+                  alt={item.title}
+                  src={item.img}
+                  sx={{ gridArea: "image", marginRight: "16px" }}
+                />
+                <Box
+                  sx={{
+                    gridArea: "content",
+                  }}
+                >
+                  <Typography variant="body1" sx={getOfferTypeStyle}>
+                    {item.title}
+                  </Typography>
+                  <FormControl sx={getChipContainerStyle}>
+                    <RadioGroup
+                      defaultValue={item.version1}
+                      sx={getRadiogroupStyle}
+                      row
+                    >
+                      <FormControlLabel
+                        value={item.version1}
+                        control={<Radio sx={{ display: "none" }} />}
+                        label={item.version1}
+                      />
+                      <FormControlLabel
+                        value={item.version2}
+                        control={<Radio sx={{ display: "none" }} />}
+                        label={item.version2}
+                      />
+                    </RadioGroup>
+                  </FormControl>
+                  <StyledTypography>{item.value1}</StyledTypography>
+                  <StyledTypography>{item.value2}</StyledTypography>
+                </Box>
+                <StyledButton gridArea="button"> Mais detalhes</StyledButton>
               </Paper>
             </SwiperSlide>
           ))}
         </Swiper>
-        <IconButton onClick={swipeNextPage} sx={getIconButtonStyle}>
-          <BsChevronRight />
-        </IconButton>
+        {isMobile ? null : (
+          <IconButton onClick={swipeNextPage} sx={getIconButtonStyle}>
+            <BsChevronRight />
+          </IconButton>
+        )}
       </Box>
     </Box>
   );
