@@ -149,19 +149,21 @@ export const StyledBurguerButton = ({ isOpen, ...props }) => (
 
 export const getDrawerMenuStyle = (): SxProps => ({
   "> ul": {
-    listStyle: "none",
-    marginTop: "4em",
     "> li": {
-      padding: "20px 4%",
-      transition: ".5s",
-      ":active": {
-        background: "#C4C4C4",
-      },
+      padding: "16px",
+      margin: "4px 0px 4px 0px",
+      fontWeight: "medium",
+      fontSize: "14px",
+      borderRadius: "4px",
       "> *": {
-        color: "#1a1a1a",
-        textDecoration: "none",
-        marginLeft: "10px",
-        lineHeight: "31px",
+        color: "#ffffff",
+        marginLeft: "6px",
+      },
+      ":active": {
+        background: "#333333",
+      },
+      ":hover": {
+        background: "#4D4D4D",
       },
     },
   },
@@ -192,3 +194,27 @@ export const StyledTypohraphy = React.forwardRef<HTMLElement, TypographyProps>(
 export const StyledLink = React.forwardRef<HTMLElement, LinkProps>((props) => (
   <Link color="inherit" sx={{ cursor: "pointer" }} {...props} />
 ));
+
+export const getDrawerContainerStyle = (): SxProps => ({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+});
+
+export const getDrawerTitleStyle = (): SxProps => ({
+  textAlign: "center",
+  fontWeight: "bold",
+  color: "#ffffff",
+  typography: "h6",
+});
+
+export const getDrawerButtonStyle = (): SxProps => ({
+  background: "#ffffff",
+  color: "#000000",
+  ":active": {
+    background: "#BFBFBF",
+  },
+  ":hover": {
+    background: "#E6E6E6",
+  },
+});
