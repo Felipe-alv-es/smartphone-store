@@ -78,7 +78,11 @@ export const getRadiogroupStyle = () => ({
 
 export const StyledTypography = (props) => {
   return (
-    <Typography variant="body1" sx={{ fontWeight: "medium" }} {...props} />
+    <Typography
+      variant="body1"
+      sx={{ fontWeight: "medium", textAlign: "center" }}
+      {...props}
+    />
   );
 };
 
