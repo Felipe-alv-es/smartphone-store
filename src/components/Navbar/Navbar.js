@@ -50,18 +50,6 @@ const Navbar = () => {
     };
   }, []);
 
-  const categoryOptions = [
-    { text: "Oferta do Dia", icon: <AiFillHome /> },
-    { text: "Lançamentos", icon: <AiFillDatabase /> },
-    { text: "Em Destaque", icon: <AiFillProject /> },
-    { text: "Samsung", icon: <AiFillMessage /> },
-    { text: "Xiaomi", icon: <AiFillMessage /> },
-    { text: "Acessórios", icon: <AiFillMessage /> },
-    { text: "Iphone", icon: <AiFillMessage /> },
-    { text: "Lançamentos", icon: <AiFillMessage /> },
-    { text: "Cartão Fictional Mobile", icon: <AiFillMessage /> },
-  ];
-
   const menuOptions = [
     { text: "Categorias", icon: <AiFillHome /> },
     { text: "Minha Conta", icon: <AiFillDatabase /> },
