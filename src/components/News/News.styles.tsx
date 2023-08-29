@@ -16,7 +16,7 @@ export const StyledTypography = (props) => {
   return (
     <TextField
       size="small"
-      sx={{ marginRight: "16px", background: "#f3f3f3" }}
+      sx={{ marginRight: "16px", background: "#ffffff" }}
       {...props}
     />
   );

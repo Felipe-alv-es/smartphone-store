@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { Box, Drawer, Icon, Divider, Link, IconButton } from "@mui/material";
+import {
+  Box,
+  Drawer,
+  Icon,
+  Link,
+  IconButton,
+  Typography,
+  Button,
+} from "@mui/material";
 import Logo from "../../assets/images/Fictional.png";
 import FMLogo from "../../assets/images/FM.png";
 import {
@@ -12,6 +20,9 @@ import {
   StyledSearch,
   StyledTypohraphy,
   StyledLink,
+  getDrawerContainerStyle,
+  getDrawerTitleStyle,
+  getDrawerButtonStyle,
 } from "./Navbar.styles.tsx";
 import {
   AiFillHome,
@@ -39,7 +50,7 @@ const Navbar = () => {
     };
   }, []);
 
-  const menuOptions = [
+  const categoryOptions = [
     { text: "Oferta do Dia", icon: <AiFillHome /> },
     { text: "Lançamentos", icon: <AiFillDatabase /> },
     { text: "Em Destaque", icon: <AiFillProject /> },
@@ -49,6 +60,16 @@ const Navbar = () => {
     { text: "Iphone", icon: <AiFillMessage /> },
     { text: "Lançamentos", icon: <AiFillMessage /> },
     { text: "Cartão Fictional Mobile", icon: <AiFillMessage /> },
+  ];
+
+  const menuOptions = [
+    { text: "Categorias", icon: <AiFillHome /> },
+    { text: "Minha Conta", icon: <AiFillDatabase /> },
+    { text: "Meus Pedidos", icon: <AiFillProject /> },
+    { text: "Favoritos", icon: <AiFillMessage /> },
+    { text: "Mais procurados", icon: <AiFillMessage /> },
+    { text: "Baixe o App", icon: <AiFillMessage /> },
+    { text: "Suporte", icon: <AiFillMessage /> },
   ];
 
   return (
@@ -65,12 +86,43 @@ const Navbar = () => {
             isOpen={isOpen}
           />
           <Drawer
-            PaperProps={{ sx: { background: "#e7e7e7" } }}
+            PaperProps={{ sx: { background: "#000000" } }}
             open={isOpen}
             anchor="top"
             onClose={() => setIsOpen(false)}
           >
-            <Box sx={getDrawerMenuStyle}>
+            <Box sx={{ margin: "5em 32px 16px 32px" }}>
+              <Box sx={getDrawerContainerStyle}>
+                <IconButton color="primary">
+                  <AiOutlineUser color="white" />
+                </IconButton>
+                <Typography sx={getDrawerTitleStyle}>
+                  Olá, faça seu Login
+                </Typography>
+              </Box>
+              <Box sx={{ m: 2 }} />
+              <Box sx={getDrawerMenuStyle}>
+                <ul>
+                  {menuOptions.map((item) => (
+                    <>
+                      <li key={item.text}>
+                        <Icon fontSize="small">{item.icon}</Icon>
+                        <Link onClick={() => setIsOpen(false)}>
+                          {item.text}
+                        </Link>
+                      </li>
+                    </>
+                  ))}
+                </ul>
+              </Box>
+              <Button fullWidth sx={getDrawerButtonStyle}>
+                Entrar
+              </Button>
+              <Button fullWidth sx={{ color: "#ffffff" }}>
+                Cadastre-se
+              </Button>
+            </Box>
+            {/* <Box sx={getDrawerMenuStyle}>
               <ul>
                 {menuOptions.map((item) => (
                   <>
@@ -85,7 +137,7 @@ const Navbar = () => {
                   </>
                 ))}
               </ul>
-            </Box>
+            </Box> */}
           </Drawer>
         </Box>
       ) : (
