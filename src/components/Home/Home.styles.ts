@@ -7,11 +7,12 @@ export const getContainerStyle = () => ({
   },
   "> div > .swiper-pagination": {
     "> span": {
-      height: "12px",
-      width: "12px",
+      height: "6px",
+      width: "32px",
+      borderRadius: "8px",
       borderColor: "#f3f3f3",
       borderStyle: "solid",
-      background: "transparent",
+      background: "white",
       borderWidth: "2px",
       "@media(max-width: 544px)": {
         height: "8px",
