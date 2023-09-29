@@ -8,8 +8,8 @@ import {
   Typography,
   Button,
 } from "@mui/material";
-import Logo from "../../assets/images/Fictional.png";
-import FMLogo from "../../assets/images/FM.png";
+import Logo from "../../assets/images/Logos/MobileWorldLogo.png";
+import FMLogo from "../../assets/images/Logos/MB.png";
 import {
   getNavbarStyles,
   getDrawerMenuStyle,
@@ -64,7 +64,16 @@ const Navbar = () => {
     <>
       {isMobile ? (
         <Box sx={getMobileContainerStyle}>
-          <Box component="img" src={FMLogo} alt="FictionalBank Logo" />
+          <Box
+            component="img"
+            src={FMLogo}
+            alt="FictionalBank Logo"
+            sx={{
+              width: "32px",
+              height: "32px",
+              marginLeft: "4px",
+            }}
+          />
           <StyledSearch />
           <IconButton color="primary">
             <AiOutlineShoppingCart color="white" />
@@ -110,22 +119,6 @@ const Navbar = () => {
                 Cadastre-se
               </Button>
             </Box>
-            {/* <Box sx={getDrawerMenuStyle}>
-              <ul>
-                {menuOptions.map((item) => (
-                  <>
-                    <li key={item.text}>
-                      <Icon>{item.icon}</Icon>
-                      <Link onClick={() => setIsOpen(false)}>{item.text}</Link>
-                    </li>
-                    <Divider
-                      variant="inset"
-                      sx={{ marginLeft: "10px", marginRight: "10px" }}
-                    />
-                  </>
-                ))}
-              </ul>
-            </Box> */}
           </Drawer>
         </Box>
       ) : (
