@@ -31,7 +31,7 @@ const Home = () => {
     slidesPerView: 1,
     pagination: { clickable: true },
     autoplay: {
-      delay: 15000,
+      delay: 9000,
     },
     loop: true,
   };

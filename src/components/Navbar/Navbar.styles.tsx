@@ -29,7 +29,7 @@ export const getNavbarStyles = (): SxProps => ({
       "> *": {
         color: "#f3f3f3",
         textDecoration: "none",
-        borderRadius: "5px",
+        borderRadius: "32px",
         transition: ".5s",
         fontSize: "14px",
         fontWeight: "medium",
@@ -73,12 +73,11 @@ export const StyledSearch = React.forwardRef<HTMLElement, InputBaseProps>(
             padding: "8px 24px 8px 8px",
             borderRadius: "2px",
             background: "white",
+            width: "20em",
             "::placeholder": {
               color: "black",
             },
-            "@media(max-width: 544px)": {
-              // margin: "0px 16px 0px 16px",
-            },
+            "@media(max-width: 544px)": { width: "100%" },
           },
         }}
         {...props}

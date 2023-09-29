@@ -3,7 +3,7 @@ import { TextField } from "@mui/material";
 
 export const getContainerStyle = () => ({
   display: "flex",
-  padding: "16px",
+  padding: "32px 16px 16px 16px",
   justifyContent: "center",
   alignItems: "center",
   "@media(max-width: 544px)": {

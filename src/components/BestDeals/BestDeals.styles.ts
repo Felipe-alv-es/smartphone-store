@@ -41,6 +41,6 @@ export const getTitleStyle = () => ({
 });
 
 export const getTextStyle = () => ({
-  marginBottom: "32px",
+  marginBottom: "8px",
   whiteSpace: "pre-line",
 });
