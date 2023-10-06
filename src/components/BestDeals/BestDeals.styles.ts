@@ -7,8 +7,9 @@ export const getPageTitleStyle = () => ({
 });
 
 export const getContainerStyle = () => ({
-  display: "flex",
-  justifyContent: "space-between",
+  display: "grid",
+  gridTemplateAreas: `'item1 item2 item3''item4 item5 item6'`,
+  gridGap: "16px",
   margin: "16px 72px 32px 72px",
   "@media(max-width: 544px)": {
     margin: "16px",
