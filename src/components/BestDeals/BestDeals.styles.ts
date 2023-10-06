@@ -7,41 +7,6 @@ export const getPageTitleStyle = () => ({
 });
 
 export const getContainerStyle = () => ({
-  display: "grid",
-  gridTemplateAreas: `'item1 item2 item3''item4 item5 item6'`,
-  gridGap: "16px",
-  margin: "16px 72px 32px 72px",
-  "@media(max-width: 544px)": {
-    margin: "16px",
-    display: "block",
-  },
-});
-
-export const getOptionsStyle = () => ({
-  width: "100%",
-  margin: "16px",
-  borderRadius: "16px",
+  background: "coral",
   padding: "16px",
-  display: "grid",
-  placeItems: "center",
-  "@media(max-width: 544px)": {
-    margin: "0 0 16px 0",
-  },
-});
-
-export const getContentStyle = () => ({
-  padding: " 0 32px 0 32px",
-  margin: "16px 0 16px 0",
-});
-
-export const getTitleStyle = () => ({
-  typography: "h5",
-  fontWeight: "bold",
-  marginBottom: "16px",
-  textAlign: "center",
-});
-
-export const getTextStyle = () => ({
-  marginBottom: "8px",
-  whiteSpace: "pre-line",
 });
