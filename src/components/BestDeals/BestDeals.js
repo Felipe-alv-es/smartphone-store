@@ -25,7 +25,12 @@ const BestDeals = () => {
                 },
               }}
             >
-              <Box component="img" alt={item.title} src={item.image} />
+              <Box
+                component="img"
+                alt={item.title}
+                src={item.image}
+                sx={{ borderRadius: "16px" }}
+              />
             </Box>
             <Box sx={getContentStyle}>
               <Typography sx={getTitleStyle}>{item.title}</Typography>
