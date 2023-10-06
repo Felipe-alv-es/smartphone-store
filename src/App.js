@@ -11,8 +11,8 @@ function App() {
       <Home />
       <News />
       <Offers />
-      <Featuredproducts />
       <BestDeals />
+      <Featuredproducts />
       <Footer />
     </div>
   );

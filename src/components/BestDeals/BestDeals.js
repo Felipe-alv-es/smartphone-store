@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Paper, Typography } from "@mui/material";
 import { dealsOptions } from "../../assets/utils/dealsOptions.tsx";
 import { StyledButton } from "../FeaturedProducts/Featuredproducts.styles.tsx";
+import { Swiper, SwiperSlide } from "swiper/react";
 import {
   getPageTitleStyle,
   getContainerStyle,
@@ -16,6 +17,11 @@ const BestDeals = () => {
     <>
       <Typography sx={getPageTitleStyle}>{"Melhores Promoções"}</Typography>
       <Box sx={getContainerStyle}>
+        {/* <Swiper>
+          {dealsOptions.map((item) => (
+            <SwiperSlide key={item.id}></SwiperSlide>
+          ))}
+        </Swiper> */}
         {dealsOptions.map((item) => (
           <Paper sx={getOptionsStyle}>
             <Box
