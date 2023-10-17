@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Paper, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { dealsOptions } from "../../assets/utils/dealsOptions.tsx";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { getPageTitleStyle, getContainerStyle } from "./BestDeals.styles.ts";
@@ -12,62 +12,65 @@ const BestDeals = () => {
         <Swiper>
           {dealsOptions.map((item) => (
             <SwiperSlide>
-              <Box
-                sx={{
-                  display: "grid",
-                  gridTemplateAreas: `'content1 content2 content3''content1 content4 content5'`,
-                }}
-              >
-                <Paper
-                  sx={{
-                    height: "400px",
-                    width: "400px",
-                    background: "lightBlue",
-                    gridArea: "content1",
-                  }}
-                >
-                  Content1
-                </Paper>
-                <Paper
-                  sx={{
-                    height: "200px",
-                    width: "200px",
-                    background: "lightGreen",
-                    gridArea: "content2",
-                  }}
-                >
-                  Content2
-                </Paper>
-                <Paper
-                  sx={{
-                    height: "200px",
-                    width: "200px",
-                    background: "lightGreen",
-                    gridArea: "content3",
-                  }}
-                >
-                  Content3
-                </Paper>
-                <Paper
-                  sx={{
-                    height: "200px",
-                    width: "200px",
-                    background: "lightGreen",
-                    gridArea: "content4",
-                  }}
-                >
-                  Content4
-                </Paper>
-                <Paper
-                  sx={{
-                    height: "200px",
-                    width: "200px",
-                    background: "lightGreen",
-                    gridArea: "content5",
-                  }}
-                >
-                  Content5
-                </Paper>
+              <Box sx={{ display: "flex", height: "100%" }}>
+                <Box sx={{ width: "100%", background: "lightGreen" }}>
+                  <Box
+                    component="img"
+                    src={item.image}
+                    alt="Man avatar generic image"
+                    sx={{ width: "100%" }}
+                  />
+                </Box>
+                <Box>
+                  <Box
+                    sx={{
+                      background: "lightBlue",
+                      display: "flex",
+                      width: "100%",
+                    }}
+                  >
+                    <Box sx={{ width: "25%" }}>
+                      <Box
+                        component="img"
+                        src={item.image}
+                        alt="Man avatar generic image"
+                        sx={{ width: "100%" }}
+                      />
+                    </Box>
+                    <Box sx={{ width: "25%" }}>
+                      <Box
+                        component="img"
+                        src={item.image}
+                        alt="Man avatar generic image"
+                        sx={{ width: "100%" }}
+                      />
+                    </Box>
+                  </Box>
+                  <Box
+                    sx={{
+                      background: "purple",
+                      display: "flex",
+                      width: "100%",
+                    }}
+                  >
+                    <Box sx={{ width: "25%" }}>
+                      <Box
+                        component="img"
+                        src={item.image}
+                        alt="Man avatar generic image"
+                        sx={{ width: "100%" }}
+                      />
+                    </Box>
+                    <Box sx={{ width: "25%" }}>
+                      <Box
+                        component="img"
+                        src={item.image}
+                        alt="Man avatar generic image"
+                        sx={{ width: "100%" }}
+                      />
+                    </Box>
+                  </Box>
+                </Box>
               </Box>
             </SwiperSlide>
           ))}
