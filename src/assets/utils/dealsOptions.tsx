@@ -33,7 +33,7 @@ export const dealsOptions = [
   {
     id: 5,
     image: Product5,
-    title: "Ganhe fones bluetooth",
+    title: "Fones bluetooth",
     text: "No pagamento a vista do produto, ganhe fones bluetooth",
   },
   {
