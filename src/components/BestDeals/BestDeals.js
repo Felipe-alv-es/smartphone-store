@@ -12,61 +12,79 @@ const BestDeals = () => {
         <Swiper>
           {dealsOptions.map((item) => (
             <SwiperSlide>
-              <Box sx={{ display: "flex", height: "100%" }}>
-                <Box sx={{ width: "100%", background: "lightGreen" }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  height: "100%",
+                  justifyContent: "space-between",
+                }}
+              >
+                <Box
+                  sx={{
+                    width: "45%",
+                    display: "grid",
+                    placeItems: "center",
+                  }}
+                >
                   <Box
                     component="img"
                     src={item.image}
                     alt="Man avatar generic image"
-                    sx={{ width: "100%" }}
+                    sx={{ width: "100%", borderRadius: "32px" }}
                   />
                 </Box>
-                <Box>
+                <Box
+                  sx={{
+                    width: "50%",
+                    display: "grid",
+                    placeItems: "center",
+                  }}
+                >
                   <Box
                     sx={{
-                      background: "lightBlue",
                       display: "flex",
                       width: "100%",
+                      justifyContent: "center",
                     }}
                   >
-                    <Box sx={{ width: "25%" }}>
+                    <Box sx={{ width: "40%", marginRight: "16px" }}>
                       <Box
                         component="img"
                         src={item.image}
                         alt="Man avatar generic image"
-                        sx={{ width: "100%" }}
+                        sx={{ width: "100%", borderRadius: "32px" }}
                       />
                     </Box>
-                    <Box sx={{ width: "25%" }}>
+                    <Box sx={{ width: "40%" }}>
                       <Box
                         component="img"
                         src={item.image}
                         alt="Man avatar generic image"
-                        sx={{ width: "100%" }}
+                        sx={{ width: "100%", borderRadius: "32px" }}
                       />
                     </Box>
                   </Box>
                   <Box
                     sx={{
-                      background: "purple",
                       display: "flex",
                       width: "100%",
+                      justifyContent: "center",
                     }}
                   >
-                    <Box sx={{ width: "25%" }}>
+                    <Box sx={{ width: "40%", marginRight: "16px" }}>
                       <Box
                         component="img"
                         src={item.image}
                         alt="Man avatar generic image"
-                        sx={{ width: "100%" }}
+                        sx={{ width: "100%", borderRadius: "32px" }}
                       />
                     </Box>
-                    <Box sx={{ width: "25%" }}>
+                    <Box sx={{ width: "40%" }}>
                       <Box
                         component="img"
                         src={item.image}
                         alt="Man avatar generic image"
-                        sx={{ width: "100%" }}
+                        sx={{ width: "100%", borderRadius: "32px" }}
                       />
                     </Box>
                   </Box>

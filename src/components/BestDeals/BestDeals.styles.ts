@@ -7,7 +7,5 @@ export const getPageTitleStyle = () => ({
 });
 
 export const getContainerStyle = () => ({
-  background: "coral",
-  padding: "16px",
-  height: "100%",
+  padding: "32px",
 });
